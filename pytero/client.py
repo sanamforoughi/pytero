@@ -19,7 +19,7 @@ class NateroClient:
         if self.base_url is None:
             raise Exception(self.error_messages["invalid_region"])
 
-    def get(self, endpoint, params={}):
+    def get(self, endpoint, params=None):
         req_url = "{}{}".format(self.base_url, endpoint)
         return requests.get(req_url, params={**params, **self.base_params})
 
@@ -35,3 +35,7 @@ class NateroClient:
             "include_inactive": include_inactive
             "include": ",".join(str(include))
         })
+
+    def account(self, id):
+        endpoint = "accounts/{}".format(id)
+        return self.get(endpoint)
