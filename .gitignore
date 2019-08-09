@@ -4,3 +4,4 @@ dist
 pytero.egg-info
 .eggs
 .vscode
+.scripts
