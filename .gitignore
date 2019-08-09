@@ -2,3 +2,5 @@
 build
 dist
 pytero.egg-info
+.eggs
+.vscode
